@@ -1,0 +1,20 @@
+services:
+  ninfer:
+    image:  ninfer:local
+    container_name: gpu0-ninfer
+    devices:
+      - "nvidia.com/gpu=0"
+    ports:
+      - "8080:8080"
+    environment:
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+    volumes:
+      - ./models:/models:ro
+    command: >
+      ninfer-serve /models/qwen3_6_27b.ninfer
+      --host 0.0.0.0 --api-key fursov --model-id qwen3.6-27b
+      --max-context 170000 --prefill-chunk 1024 --vision
+      --default-max-tokens 100000
+      --spec mtp --draft-tokens 3 --lm-head-draft
+
+# prefill=3251.2tok/s decode=155.3tok/s

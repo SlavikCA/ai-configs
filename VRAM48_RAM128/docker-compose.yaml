@@ -1,0 +1,26 @@
+# cd ~/vast/4090/router/
+# sudo docker compose up -d
+
+services:
+  llama-router:
+    image: ghcr.io/ggml-org/llama.cpp:server-cuda13-b11459
+    container_name: gpu0-router
+    devices:
+      - "nvidia.com/gpu=0"
+    ports:
+      - "8080:8080"
+    mem_limit: 85g
+    memswap_limit: 85g
+    environment:
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+    volumes:
+      - /var/lib/docker/.cache:/root/.cache:ro
+      - ./models.ini:/app/models.ini:ro
+    entrypoint: ["./llama-server"]
+    # https://github.com/ggml-org/llama.cpp/tree/master/tools/server
+    command: >
+      --api-key fursov
+      --models-max 1
+      --models-preset ./models.ini
+      --host 0.0.0.0  --port 8080
+      --offline
