@@ -9,8 +9,8 @@ services:
       - "nvidia.com/gpu=0"
     ports:
       - "8080:8080"
-    mem_limit: 85g
-    memswap_limit: 85g
+    mem_limit: 120g
+    memswap_limit: 120g
     environment:
       - NVIDIA_DRIVER_CAPABILITIES=compute,utility
     volumes:
