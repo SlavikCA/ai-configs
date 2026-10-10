@@ -1,5 +1,5 @@
 services:
-  unsloth:
+  unslot0h:
     # https://hub.docker.com/r/unsloth/unsloth/tags
     image: unsloth/unsloth:nightly-2026.10.08
     container_name: gpu0-unsloth
