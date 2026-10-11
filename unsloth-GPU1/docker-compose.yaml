@@ -1,7 +1,7 @@
 services:
   unsloth1:
     # https://hub.docker.com/r/unsloth/unsloth/tags
-    image: unsloth/unsloth:nightly-2026.10.08
+    image: unsloth/unsloth:nightly-2026.10.10
     container_name: gpu1-unsloth
     devices:
       - "nvidia.com/gpu=1"
