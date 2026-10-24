@@ -12,6 +12,7 @@ services:
     environment:
       - JUPYTER_PASSWORD=junsloth
       - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+      - HF_HUB_DISABLE_SHARED_BLOBS=1
     ports:
       - "8081:8000"  # Studio
       #- "8888:8888"  # Jupyter
