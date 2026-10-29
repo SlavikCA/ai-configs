@@ -24,7 +24,7 @@ sudo docker run $D_OPTIONS \
 
 # run LLAMA:
 
-IMAGE="ghcr.io/ggml-org/llama.cpp:server-cuda13-b11459"
+IMAGE="ghcr.io/ggml-org/llama.cpp:server-cuda13-b11977"
 
 LLM="--host 0.0.0.0  --port 8080  --api-key fursov \
    --gpu-layers-draft all \

@@ -1,6 +1,6 @@
 services:
   laguna21:
-    image: ghcr.io/ggml-org/llama.cpp:server-cuda13-b11459
+    image: ghcr.io/ggml-org/llama.cpp:server-cuda13-b11977
     container_name: gpu0-laguna21
     devices:
       - "nvidia.com/gpu=0"
